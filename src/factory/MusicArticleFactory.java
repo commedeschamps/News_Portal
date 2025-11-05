@@ -12,7 +12,7 @@ public class MusicArticleFactory implements ArticleFactory {
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("MUSIC")
+                .category("Music")
                 .priority(4)
                 .build();
     }

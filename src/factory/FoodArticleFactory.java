@@ -12,7 +12,7 @@ public class FoodArticleFactory implements  ArticleFactory{
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("FOOD")
+                .category("Food")
                 .priority(4)
                 .build();
     }

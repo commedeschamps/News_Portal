@@ -8,6 +8,7 @@ public class PushNotification implements NotificationStrategy {
     public void sendNotification(Article article, Subscriber subscriber) {
         validate(subscriber);
         System.out.println("  ├─ PUSH  -> " + subscriber.getName() + " | " + article.getTitle());
+        System.out.println("  │          --> " + article.getContent());
     }
 
     @Override

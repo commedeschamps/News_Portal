@@ -12,7 +12,7 @@ public class TechArticleFactory implements ArticleFactory {
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("TECHNOLOGY")
+                .category("Technology")
                 .priority(7)
                 .build();
     }

@@ -12,7 +12,7 @@ public class PoliticsArticleFactory implements ArticleFactory {
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("POLITICS")
+                .category("Politics")
                 .priority(10)
                 .build();
     }

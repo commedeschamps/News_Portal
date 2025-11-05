@@ -8,6 +8,7 @@ public class EmailNotification implements NotificationStrategy {
     public void sendNotification(Article article, Subscriber subscriber) {
         validate(subscriber);
         System.out.println("  ├─ EMAIL -> " + subscriber.getEmail() + " | " + article.getTitle());
+        System.out.println("  │          --> " + article.getContent());
     }
 
     @Override

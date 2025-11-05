@@ -13,7 +13,7 @@ public class CrimeArticleFactory implements ArticleFactory {
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("CRIME")
+                .category("Crime")
                 .priority(9)
                 .build();
     }

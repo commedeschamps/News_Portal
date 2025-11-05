@@ -8,6 +8,7 @@ public class SMSNotification implements NotificationStrategy {
     public void sendNotification(Article article, Subscriber subscriber) {
         validate(subscriber);
         System.out.println("  ├─ SMS   -> " + subscriber.getPhone() + " | " + article.getTitle());
+        System.out.println("  │          --> " + article.getContent());
     }
 
     @Override

@@ -12,7 +12,7 @@ public class WeatherArticleFactory implements ArticleFactory {
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("WEATHER")
+                .category("Weather")
                 .priority(10)
                 .build();
     }

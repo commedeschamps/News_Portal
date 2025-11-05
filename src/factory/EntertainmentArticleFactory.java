@@ -12,7 +12,7 @@ public class EntertainmentArticleFactory implements ArticleFactory {
                 .title(title)
                 .content(content)
                 .author(author)
-                .category("ENTERTAINMENT")
+                .category("Entertainment")
                 .publishedDate(LocalDateTime.now())
                 .priority(3)
                 .build();

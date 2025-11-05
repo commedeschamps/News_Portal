@@ -12,7 +12,7 @@ public class SportsArticleFactory implements ArticleFactory {
                 .content(content)
                 .author(author)
                 .publishedDate(LocalDateTime.now())
-                .category("SPORTS")
+                .category("Sports")
                 .priority(5)
                 .build();
     }

@@ -71,6 +71,10 @@ public class NewsAgency implements Observable {
         System.out.println("│ Category: " + article.getCategory() +
                 " | Author: " + article.getAuthor() +
                 " | Priority: " + article.getPriority() + "/10");
+        System.out.println("├─────────────────────────────────────────────────────────────┤");
+        for (String line : article.getContent().split("\n")) {
+            System.out.println("│ " + line);
+        }
         System.out.println("└─────────────────────────────────────────────────────────────┘");
         notifySubscribers(article);
     }
