@@ -4,6 +4,7 @@ import newsagency.NewsAgency;
 import observer.Subscriber;
 import strategy.NotificationStrategy;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class NewsFacade {
@@ -26,9 +27,6 @@ public class NewsFacade {
         return defaultStrategy;
     }
 
-    public NewsAgency getAgency() {
-        return agency;
-    }
 
     public Subscriber register(String name, String email, String phone, NotificationStrategy strategy) {
         NotificationStrategy effective = (strategy != null) ? strategy : defaultStrategy;
@@ -65,19 +63,8 @@ public class NewsFacade {
         subscriber.setStrategy(strategy);
     }
 
-    public void publish(Article article) {
-        Objects.requireNonNull(article, "article");
-        agency.publish(article);
-    }
-
-    public Article publish(String title, String content, String category, String author, int priority) {
-        Article article = Article.builder()
-                .title(title)
-                .content(content)
-                .category(category)
-                .author(author)
-                .priority(priority)
-                .build();
+    public Article publish(factory.ArticleFactory factory, String title, String content, String author) {
+        Article article = factory.createArticle(title, content, author);
         agency.publish(article);
         return article;
     }

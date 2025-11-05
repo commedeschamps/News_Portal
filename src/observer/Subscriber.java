@@ -38,7 +38,7 @@ public class Subscriber implements Observer {
         if (category != null && !category.isBlank()) {
             String normalized = category.trim().toLowerCase();
             interests.add(normalized);
-            System.out.println("      → " + name + " added interest: '" + normalized + "'");
+            System.out.println("      --> " + name + " added interest: '" + normalized + "'");
         }
     }
 

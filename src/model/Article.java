@@ -41,7 +41,7 @@ public class Article {
         private String category = "GENERAL";
         private LocalDateTime publishedDate = LocalDateTime.now();
         private String author = "Anonymous";
-        private int priority = 0;
+        private int priority = 5;
 
         public Builder title(String title) {
             this.title = title;
