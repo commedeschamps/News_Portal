@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Article {
-    private final String id;
     private final String title;
     private final String content;
     private final String category;
@@ -13,7 +12,6 @@ public class Article {
     private final int priority;
 
     public Article(Builder builder) {
-        this.id = builder.id;
         this.title = builder.title.trim();
         this.content = builder.content.trim();
         this.category = builder.category.trim();
@@ -22,20 +20,35 @@ public class Article {
         this.priority = builder.priority;
     }
 
-    public String getId() { return id; }
-    public String getTitle() { return title; }
-    public String getContent() { return content; }
-    public String getCategory() { return category; }
-    public LocalDateTime getPublishedDate() { return publishedDate; }
-    public String getAuthor() { return author; }
-    public int getPriority() { return priority; }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public LocalDateTime getPublishedDate() {
+        return publishedDate;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
 
     public static Builder builder() {
         return new Builder();
     }
 
     public static class Builder {
-        private String id = UUID.randomUUID().toString();
         private String title;
         private String content;
         private String category = "GENERAL";
@@ -67,6 +80,7 @@ public class Article {
             this.priority = Math.max(0, Math.min(10, priority));
             return this;
         }
+
         public Builder publishedDate(LocalDateTime publishedDate) {
             this.publishedDate = publishedDate;
             return this;
@@ -91,18 +105,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return String.format("Article{id='%s', title='%s', category='%s', priority=%d}",
-                id, title, category, priority);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Article)) return false;
-        return this.id.equals(((Article) o).id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id.hashCode();
+        return String.format("Article{title='%s', category='%s', priority=%d}",
+                title, category, priority);
     }
 }

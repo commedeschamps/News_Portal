@@ -39,8 +39,7 @@ public class NewsAgency implements Observable {
 
         for (Observer observer : subscribers) {
             try {
-                if (observer instanceof Subscriber) {
-                    Subscriber sub = (Subscriber) observer;
+                if (observer instanceof Subscriber sub) {
                     if (sub.isInterested(article)) {
                         observer.update(article);
                         notifiedNames.add(sub.getName());
